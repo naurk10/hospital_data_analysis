@@ -15,29 +15,30 @@ O objetivo é extrair indicadores relevantes sobre pacientes, doenças e interna
 - SQL
 - Psycopg2
 
----
+--## 📂 Estrutura do Projeto
 
-## 📂 Estrutura do Projeto
-
+```text
 HOSPITAL_DATA_ANALYSIS/
 │
-├── consultas.sql # Queries SQL utilizadas
+├── consultas.sql
 │
-├── dados/ # Arquivos gerados via Python
-│ ├── doencas.csv
-│ ├── relatorio_hospitalar.xlsx
-│ ├── tempo_internacao.csv
-│ └── volume_pacientes.csv
+├── dados/
+│   ├── doencas.csv
+│   ├── relatorio_hospitalar.xlsx
+│   ├── tempo_internacao.csv
+│   └── volume_pacientes.csv
 │
 ├── scripts/
-│ ├── analise_dados.py # Script principal de análise
-│ ├── conexao_postgresql.py # Conexão com banco
-│ ├── consultas_sql.py # Queries organizadas
-│ ├── gerar_graficos.py # Geração de visualizações
-│ └── gerar_relatorio.py # Geração de relatório Excel
+│   ├── docs/
+│   ├── analise_dados.py
+│   ├── conexao_postgresql.py
+│   ├── consultas_sql.py
+│   ├── gerar_graficos.py
+│   └── gerar_relatorio.py
 │
+├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## 📊 Análises Realizadas
@@ -82,6 +83,7 @@ python scripts/gerar_graficos.py
 ```
 
 ---
+
 
 
 
