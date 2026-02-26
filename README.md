@@ -1,24 +1,93 @@
-# Análise de Dados Hospitalares
+# 🏥 Hospital Data Analysis
 
-Este projeto realiza a análise de dados hospitalares, incluindo informações sobre pacientes, internações, tratamentos e doenças. O objetivo é entender as características e os padrões dos pacientes, como a duração das internações, os tratamentos aplicados e as doenças mais comuns.
+Projeto de análise de dados hospitalares utilizando PostgreSQL e Python.
 
-## Estrutura do Projeto
+O objetivo é extrair indicadores relevantes sobre pacientes, doenças e internações, gerando relatórios e visualizações para apoio à decisão.
 
-- **`consultas.sql`**: Contém todas as consultas SQL usadas para análise dos dados.
-- **`scripts/conexao_postgresql.py`**: Script Python para se conectar ao banco de dados e executar as consultas SQL.
-- **`dados/pacientes.csv`**: Arquivo CSV contendo os dados de pacientes extraídos do banco de dados PostgreSQL.
+---
 
-## Como Rodar
+## 🚀 Tecnologias Utilizadas
 
-### Pré-requisitos
+- PostgreSQL
+- Python
+- Pandas
+- Matplotlib
+- SQL
+- Psycopg2
 
-- Python 3.x
-- Bibliotecas: `pandas`, `sqlalchemy`, `psycopg2`
-- Banco de dados PostgreSQL com o banco de dados **`analise_hospitalar`** configurado.
+---
 
-### Instalação
+## 📂 Estrutura do Projeto
 
-1. Clone o repositório:
+HOSPITAL_DATA_ANALYSIS/
+│
+├── consultas.sql # Queries SQL utilizadas
+│
+├── dados/ # Arquivos gerados via Python
+│ ├── doencas.csv
+│ ├── relatorio_hospitalar.xlsx
+│ ├── tempo_internacao.csv
+│ └── volume_pacientes.csv
+│
+├── scripts/
+│ ├── analise_dados.py # Script principal de análise
+│ ├── conexao_postgresql.py # Conexão com banco
+│ ├── consultas_sql.py # Queries organizadas
+│ ├── gerar_graficos.py # Geração de visualizações
+│ └── gerar_relatorio.py # Geração de relatório Excel
+│
+└── README.md
 
-   ```bash
-   git clone https://github.com/seu-usuario/hospital_data_analysis.git
+---
+
+## 📊 Análises Realizadas
+
+✔ Volume de pacientes  
+✔ Tempo médio de internação  
+✔ Distribuição por gênero  
+✔ Principais diagnósticos  
+✔ Relatório hospitalar consolidado  
+
+---
+
+## 📈 Visualizações
+
+### Internações por mês
+![Internacoes](scripts/docs/grafico_internacoes_mes.png)
+
+### Top Diagnósticos
+![Diagnosticos](scripts/docs/grafico_top_diagnosticos.png)
+
+### Distribuição por gênero
+![Genero](scripts/docs/grafico_genero.png)
+
+### Tempo médio de permanência
+![Tempo](scripts/docs/grafico_tempo_medio_especialidade.png)
+
+---
+
+## ▶ Como Executar
+
+### 1) Instalar dependências
+```bash
+pip install -r requirements.txt
+```
+## 2) Rodar análises
+```bash
+python scripts/analise_dados.py
+```
+## 3) Gerar gráficos
+```bash
+python scripts/gerar_graficos.py
+```
+
+---
+
+
+
+
+
+
+
+
+
