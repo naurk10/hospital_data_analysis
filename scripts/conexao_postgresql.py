@@ -1,23 +1,28 @@
-import os
-from sqlalchemy import create_engine
+# conexao_postgresql.py
+import psycopg2
 import pandas as pd
 
-# Caminho absoluto para a pasta 'dados'
-output_folder = r'C:\Users\super\Desktop\PROJETOS\hospital_data_analysis\dados'
+conn = psycopg2.connect(
+    host="localhost",
+    port=5432,
+    database="analise_hospitalar_restore",
+    user="postgres",
+    password="6463"
+)
+conn.set_client_encoding("UTF8")
 
-# Criar a pasta 'dados' se ela não existir (usando os.makedirs apenas para garantir)
-os.makedirs(output_folder, exist_ok=True)
+import pandas as pd
 
-# String de conexão com PostgreSQL via SQLAlchemy
-engine = create_engine('postgresql+psycopg2://postgres:6463@localhost:5432/analise_hospitalar')
+check = pd.read_sql("SHOW client_encoding;", con=conn)
+print(check)
 
-# Consulta SQL para pegar todos os dados da tabela 'pacientes'
-query = "SELECT * FROM pacientes;"
+query = "SELECT * FROM pacientes LIMIT 5;"
+df = pd.read_sql(query, con=conn)
 
-# Usar o pandas para ler os dados diretamente do PostgreSQL
-df = pd.read_sql(query, engine)
+import sys
+print("stdout encoding:", sys.stdout.encoding)
+print("teste:", "João")
 
-# Salvar os dados em um arquivo CSV na pasta 'dados'
-df.to_csv(os.path.join(output_folder, 'pacientes.csv'), index=False)
+print(df)
 
-print("Dados exportados para pacientes.csv com sucesso!")
+conn.close()
